@@ -99,6 +99,9 @@ File.open('./public/js/app.js', 'w'){|f|
 # if exists, look up access token and use that
 
 get '/' do
+  redirect to ('/quikly')
+  return
+  
   if !params[:oauth_token]
     @@log.info "first-time user!"
     haml :index
